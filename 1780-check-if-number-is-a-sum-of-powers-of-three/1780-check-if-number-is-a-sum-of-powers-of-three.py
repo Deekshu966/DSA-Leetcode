@@ -1,0 +1,17 @@
+class Solution(object):
+    def checkPowersOfThree(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        i = 0
+        while 3**(i+1) < n:
+            i += 1
+        while i >= 0:
+            power = 3 ** i
+            if power <= n:
+                n -= power
+            if power <= n:
+                return False
+            i -= 1
+        return 0 == n 
