@@ -4,10 +4,10 @@ class Solution(object):
             """Returns True if we can rob at least k houses with max <= mid."""
             count, i = 0, 0
             while i < len(nums):
-                if nums[i] <= mid:  # Select this house if it's within capability
+                if nums[i] <= mid:  
                     count += 1
-                    i += 1  # Skip next house (non-adjacent condition)
-                i += 1  # Move to next house
+                    i += 1  
+                i += 1  
             return count >= k
 
         # Binary search for the minimum capability
