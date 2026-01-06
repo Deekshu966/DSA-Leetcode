@@ -123,9 +123,10 @@ class ExampleSolutions:
             Input: nums1 = [1,2,2,1], nums2 = [2,2]
             Output: [2,2]
         """
-        nums1.sort()
-        nums2.sort()
-        return ArrayUtils.find_intersection_sorted(nums1, nums2)
+        # Work on copies to avoid modifying input arrays
+        sorted_nums1 = sorted(nums1)
+        sorted_nums2 = sorted(nums2)
+        return ArrayUtils.find_intersection_sorted(sorted_nums1, sorted_nums2)
     
     
     # Problem 704: Binary Search

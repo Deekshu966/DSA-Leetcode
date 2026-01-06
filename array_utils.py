@@ -67,6 +67,9 @@ class ArrayUtils:
         n = len(arr)
         k = k % n
         
+        if k == 0:
+            return
+        
         ArrayUtils.reverse(arr, 0, n - 1)
         ArrayUtils.reverse(arr, 0, k - 1)
         ArrayUtils.reverse(arr, k, n - 1)
@@ -94,6 +97,9 @@ class ArrayUtils:
         
         n = len(arr)
         k = k % n
+        
+        if k == 0:
+            return
         
         ArrayUtils.reverse(arr, 0, k - 1)
         ArrayUtils.reverse(arr, k, n - 1)

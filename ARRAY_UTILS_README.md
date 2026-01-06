@@ -4,7 +4,7 @@ A comprehensive collection of reusable array manipulation and algorithm utilitie
 
 ## Overview
 
-This module (`array_utils.py`) provides a `ArrayUtils` class with static methods for common array operations, including:
+This module (`array_utils.py`) provides an `ArrayUtils` class with static methods for common array operations, including:
 - Array manipulation (reverse, rotate, swap)
 - Binary search variants
 - Two-pointer techniques
