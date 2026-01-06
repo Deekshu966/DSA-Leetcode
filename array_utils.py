@@ -5,6 +5,8 @@ This module provides commonly used array manipulation functions
 that can be reused across various LeetCode problems.
 """
 
+from collections import deque
+
 
 class ArrayUtils:
     """Collection of utility functions for array operations."""
@@ -502,8 +504,6 @@ class ArrayUtils:
             >>> ArrayUtils.sliding_window_max([1, 3, -1, -3, 5, 3, 6, 7], 3)
             [3, 3, 5, 5, 6, 7]
         """
-        from collections import deque
-        
         if not arr or k <= 0:
             return []
         
@@ -601,8 +601,19 @@ class ArrayUtils:
 # Standalone utility functions for quick imports
 
 def reverse_array(arr, start=None, end=None):
-    """Convenience function for ArrayUtils.reverse"""
-    return ArrayUtils.reverse(arr, start, end)
+    """
+    Convenience function for ArrayUtils.reverse.
+    
+    Args:
+        arr: List to reverse
+        start: Starting index (default: 0)
+        end: Ending index (default: len(arr) - 1)
+        
+    Returns:
+        The modified array (for chaining)
+    """
+    ArrayUtils.reverse(arr, start, end)
+    return arr
 
 
 def rotate_array(arr, k, direction='right'):
@@ -612,12 +623,21 @@ def rotate_array(arr, k, direction='right'):
     Args:
         arr: List to rotate
         k: Number of positions
-        direction: 'right' or 'left'
+        direction: 'right' or 'left' (default: 'right')
+        
+    Returns:
+        The modified array (for chaining)
+        
+    Raises:
+        ValueError: If direction is not 'right' or 'left'
     """
     if direction == 'right':
         ArrayUtils.rotate_right(arr, k)
-    else:
+    elif direction == 'left':
         ArrayUtils.rotate_left(arr, k)
+    else:
+        raise ValueError(f"Invalid direction '{direction}'. Must be 'right' or 'left'.")
+    return arr
 
 
 def binary_search(arr, target):
